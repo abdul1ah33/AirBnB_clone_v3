@@ -92,7 +92,7 @@ class DBStorage:
 
     def count(self, cls=None):
         """
-        count the number of objects in storage
+        count the number of objects present in storage
         """
         all_class = classes.values()
 
