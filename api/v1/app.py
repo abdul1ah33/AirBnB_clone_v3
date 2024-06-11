@@ -83,5 +83,7 @@ if __name__ == "__main__":
     """
     MAIN Flask App
     """
+    HOST =getenv('HBNB_API_HOST', '0.0.0.0')
+    PORT = int(getenv('HBNB_API_PORT', 5000))
     setup_global_errors()
-    app.run(host=host, port=port)
+    app.run(host=HOST, port=PORT, threaded=True)
