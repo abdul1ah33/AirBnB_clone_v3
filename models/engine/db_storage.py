@@ -56,7 +56,7 @@ class DBStorage:
         self.__session.add(obj)
 
     def save(self):
-        """commits all changes of the current database session"""
+        """commit all changes of the current database session"""
         self.__session.commit()
 
     def delete(self, obj=None):
@@ -92,7 +92,7 @@ class DBStorage:
 
     def count(self, cls=None):
         """
-        count the number of objects present in storage
+        count the number of objects in storage
         """
         all_class = classes.values()
 
