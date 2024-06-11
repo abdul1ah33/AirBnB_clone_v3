@@ -7,6 +7,8 @@ from flask import Blueprint
 
 app_views = Blueprint('/api/v1', __name__, url_prefix="/api/v1")
 
+auth_blueprint = Blueprint('auth', __name__)
+
 from api.v1.views.index import *
 from api.v1.views.states import *
 from api.v1.views.amenities import *
@@ -15,3 +17,4 @@ from api.v1.views.places import *
 from api.v1.views.places_reviews import *
 from api.v1.views.users import *
 from api.v1.views.places_amenities import *
+
