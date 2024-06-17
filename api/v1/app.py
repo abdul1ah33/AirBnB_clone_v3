@@ -10,20 +10,26 @@ from models import storage
 import os
 from werkzeug.exceptions import HTTPException
 
+# Global Flask Application Variable: app
 app = Flask(__name__)
 swagger = Swagger(app)
 
+# global strict slashes
 app.url_map.strict_slashes = False
 
+# flask server environmental setup
 host = os.getenv('BTCPBNB_API_HOST', '0.0.0.0')
 port = os.getenv('BTCPBNB_API_PORT', 5001)
 
+# Cross-Origin Resource Sharing
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
+# app_views BluePrint defined in api.v1.views
 app.register_blueprint(app_views)
 app.register_blueprint(auth_blueprint)
 
 
+# begin flask page rendering
 @app.teardown_appcontext
 def teardown_db(exception):
     """
@@ -83,7 +89,7 @@ if __name__ == "__main__":
     """
     MAIN Flask App
     """
-    HOST =getenv('HBNB_API_HOST', '0.0.0.0')
-    PORT = int(getenv('HBNB_API_PORT', 5000))
+    # initializes global error handling
     setup_global_errors()
-    app.run(host=HOST, port=PORT, threaded=True)
+    # start Flask app
+    app.run(host=host, port=port)

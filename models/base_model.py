@@ -72,7 +72,7 @@ class BaseModel:
         try:
             obj_to_str = json.dumps(obj_v)
             return obj_to_str is not None and isinstance(obj_to_str, str)
-        except Exception:
+        except:
             return False
 
     def bm_update(self, name, value):
