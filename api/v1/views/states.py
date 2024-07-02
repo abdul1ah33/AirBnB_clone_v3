@@ -60,7 +60,7 @@ def state_by_id(state_id):
 @app_views.route("/states/<state_id>",  methods=["PUT"], strict_slashes=False)
 def state_put(state_id):
     """
-    upP0+r\P0+r\P0+r\P0+r\P0+r\dates specific State object by ID
+    updates specific State object by ID
     :param state_id: state object ID
     :return: state object and 200 on success, or 400 or 404 on failure
     """
