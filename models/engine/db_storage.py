@@ -89,7 +89,7 @@ class DBStorage:
 
     def count(self, cls=None):
         """
-        Returns the occurrence of a class or all classes
+        Returns the occurrence of a class or of all classes
         """
         occurrence = 0
         if cls:
