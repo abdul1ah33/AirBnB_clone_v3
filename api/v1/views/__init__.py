@@ -1,4 +1,4 @@
-#/!usr/bin/python3
+#!/usr/bin/python3
 """Blueprint for PI """
 from flask import Blueprint
 
