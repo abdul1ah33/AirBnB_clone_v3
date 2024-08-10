@@ -89,12 +89,15 @@ class DBStorage:
 
     def count(self, cls=None):
         """
-        Returns the occurrence of a class or of all classes
+        count the number of objects in storage
         """
-        occurrence = 0
-        if cls:
-            if cls in classes.keys() or cls in classes.values():
-                occurrence = len(self.all(cls))
+        all_class = classes.values()
+
         if not cls:
-            occurrence = len(self.all())
-        return occurrence
+            count = 0
+            for clas in all_class:
+                count += len(models.storage.all(clas).values())
+        else:
+            count = len(models.storage.all(cls).values())
+
+        return count
